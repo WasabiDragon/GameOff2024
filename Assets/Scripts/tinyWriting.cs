@@ -6,6 +6,7 @@ public class tinyWriting : MonoBehaviour
     [SerializeField] Paper paper;
 	[SerializeField] GameObject tinyWritingBox;
 	[SerializeField] TextMeshProUGUI tinyText;
+	FocusMode focus;
 
 	void Start()
 	{
@@ -14,6 +15,7 @@ public class tinyWriting : MonoBehaviour
 
 	void Init()
 	{
+		focus = GameManager.instance.focus;
 		if(paper != null && paper.GetInfo().hiddenMessage != null && paper.GetInfo().hiddenMessage.Length > 0)
 		{
 			tinyWritingBox.SetActive(true);
@@ -43,16 +45,15 @@ public class tinyWriting : MonoBehaviour
 
 		tinyWritingBox.transform.position = new Vector3(rtf.position.x, firstCharacterPos.y, rtf.position.z);
 		
-		TextMeshProUGUI text = tinyWritingBox.GetComponent<TextMeshProUGUI>();
-		text.text = paper.GetInfo().hiddenMessage;
+		tinyText.text = paper.GetInfo().hiddenMessage;
 	}
 
 	void OnClick()
 	{
-		Tool tool = GameManager.instance.focus.GetTool();
-		if(tool.type == Tool.toolType.magnifying)
+		if(focus.FocusedPaper == paper && focus.GetTool().type == Tool.toolType.magnifying)
 		{
-			GameManager.instance.decoder.TranslateMessage(tool);
+			GameManager.instance.magnifyingSettings.Trigger();
 		}
 	}
+	
 }

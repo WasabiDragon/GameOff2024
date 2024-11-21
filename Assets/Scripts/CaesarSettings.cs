@@ -15,16 +15,11 @@ public class CaesarSettings : ToolSettings
 		}
 	}
 
-	public override void Decode()
-	{
-		tool.toolSetting = Offset;
-		GameManager.instance.decoder.TranslateMessage(tool);
-	}
-
 	public void Trigger()
 	{
 		if(focus.ToolFocusEnabled() && focus.FocusEnabled())
 		{
+			tool.toolSetting = Offset;
 			Decode();
 		}
 		else

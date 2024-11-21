@@ -12,6 +12,6 @@ public class ToolSettings : MonoBehaviour
 
 	public virtual void Decode()
 	{
-		Debug.Log("Tool settings decode not implemented for this object.");
+		GameManager.instance.decoder.TranslateMessage(tool);
 	}
 }

@@ -52,17 +52,19 @@ public class Decoder : MonoBehaviour
 		string output = "";
 		foreach(char c in message)
 		{
-			// excluding text tags from the decoding process
-			if(c.Equals("<") || c.Equals(@"\"))
+			// excluding text tags from the decoding process, if using other tags, add them here
+			if(c.Equals(char.Parse("<")) || c.Equals(char.Parse(@"\")))
 			{
-				textTag = !textTag;
+				textTag = true;
 			}
+
 			if(textTag)
 			{
 				output += c;
-				if(c.Equals("n") || c.Equals(">"))
+				// don't forget closing tag here too
+				if(c.Equals(char.Parse("n")) || c.Equals(char.Parse(">")))
 				{
-					textTag = !textTag;
+					textTag = false;
 				}
 				continue;
 			}

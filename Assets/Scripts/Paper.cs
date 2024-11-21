@@ -7,6 +7,7 @@ public class Paper : MonoBehaviour
     [SerializeField] Image paperLogo;
 	public TextMeshProUGUI paperText;
 	[SerializeField] PaperInfo infoSheet;
+	[SerializeField] tinyWriting tinyWriting;
 
 	public void SetPaper(PaperInfo paperInfo)
 	{

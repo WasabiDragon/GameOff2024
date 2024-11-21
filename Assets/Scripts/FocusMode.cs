@@ -17,8 +17,12 @@ public class FocusMode : MonoBehaviour
 	private bool isEnabled = false;
 	private bool isToolEnabled = false;
 
+	private SpriteRenderer backgroundRender;
 
-
+	void Start()
+	{
+		backgroundRender = focusBackground.GetComponent<SpriteRenderer>();
+	}
 
 	public bool FocusEnabled()
 	{
@@ -58,7 +62,7 @@ public class FocusMode : MonoBehaviour
 			storedPaper = objectToFocus;
 			StopAllCoroutines();
 			StartCoroutine(MoveToPos(objectToFocus, paperFocusPoint.transform.position));
-			focusBackground.SetActive(true);
+			StartCoroutine(FadedBackground(true));
 			isEnabled = true;
 		}
 		else if (objectToFocus.GetComponent<ToolSettings>() != null)
@@ -78,7 +82,7 @@ public class FocusMode : MonoBehaviour
 	public void DisablePaperFocus()
 	{
 		StartCoroutine(MoveToPos(storedPaper, paperOriginalPos));
-		focusBackground.SetActive(false);
+		StartCoroutine(FadedBackground(false));
 		isEnabled = false;
 	}
 
@@ -103,5 +107,33 @@ public class FocusMode : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+	}
+
+	private IEnumerator FadedBackground(bool enable)
+	{
+		Color fullCol = new(0,0,0,0.7607843f);
+		Color targetCol = new(0,0,0,0);
+		if(enable)
+		{
+			targetCol = fullCol;
+			focusBackground.SetActive(true);
+		}
+
+		float f = 0;
+		while (f < 1f)
+		{
+			f += Time.deltaTime * transitionSpeed;
+			f = Mathf.Clamp(f, 0, 1f);
+
+			Color c = Color.Lerp(backgroundRender.color, targetCol, f);
+			backgroundRender.color = c;
+
+			yield return new WaitForEndOfFrame();
+		}
+
+		if(!enable)
+		{
+			focusBackground.SetActive(false);
+		}
 	}
 }
