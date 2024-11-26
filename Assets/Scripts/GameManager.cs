@@ -16,4 +16,7 @@ public class GameManager : MonoBehaviour
 	public PaperSpawner paperSpawner;
 	public FocusMode focus;
 	public SnapPoints snapping;
+	public CaesarSettings caesarSettings;
+	public magnifierSettings magnifyingSettings;
+	public audioManager audioManager;
 }

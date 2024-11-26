@@ -80,12 +80,14 @@ public class FocusMode : MonoBehaviour
 		StartCoroutine(MoveToPos(storedPaper, paperOriginalPos));
 		focusBackground.SetActive(false);
 		isEnabled = false;
+		storedPaper = null;
 	}
 
 	public void DisableToolFocus()
 	{
 		StartCoroutine(MoveToPos(storedTool, toolOriginalPos));
 		isToolEnabled = false;
+		storedTool = null;
 	}
 
 

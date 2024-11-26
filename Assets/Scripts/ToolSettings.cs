@@ -7,11 +7,16 @@ public class ToolSettings : MonoBehaviour
 
 	void Start()
 	{
+		Init();
+	}
+
+	public void Init()
+	{
 		focus = GameManager.instance.focus;
 	}
 
 	public virtual void Decode()
 	{
-		Debug.Log("Tool settings decode not implemented for this object.");
+		GameManager.instance.decoder.TranslateMessage(tool);
 	}
 }

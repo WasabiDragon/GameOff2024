@@ -15,6 +15,7 @@ public class Decoder : MonoBehaviour
 	{
 		string outputMessage = "";
 		string message = focus.FocusedPaper.GetText();
+		Debug.Log(message);
 		if(message == null || message.Length <= 0 || decodeTool == null)
 		{
 			Debug.Log("No message or tool sent to decoder.");
@@ -60,6 +61,7 @@ public class Decoder : MonoBehaviour
 			if(textTag)
 			{
 				output += c;
+				Debug.Log("");
 				if(c.Equals("n") || c.Equals(">"))
 				{
 					textTag = !textTag;

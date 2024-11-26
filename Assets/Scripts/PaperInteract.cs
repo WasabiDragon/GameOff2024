@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PaperInteract : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class PaperInteract : MonoBehaviour
 	float distanceToScreen = 0;
 	Vector3 mouseStartPoint;
 	FocusMode focus;
+	GameObject currentTray;
 
 
 	void Start()
@@ -65,6 +65,7 @@ public class PaperInteract : MonoBehaviour
 			}
 			else
 			{
+				currentTray = GameManager.instance.snapping.currentSnap;
 				transform.position = new Vector3(snapCheck.position.x, snapCheck.position.y, transform.position.z);
 				transform.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, snapCheck.rotation.eulerAngles.z);
 			}
@@ -79,6 +80,10 @@ public class PaperInteract : MonoBehaviour
 		transform.position = placeObj;
 
 		GameManager.instance.paperSorter.SortList(gameObject);
+		if(currentTray != null && currentTray.GetComponent<Tray>() != null)
+		{
+			currentTray.GetComponent<Tray>().AddToTray(GetComponent<Paper>());
+		}
 	}
 
 	private void FollowMouse()
