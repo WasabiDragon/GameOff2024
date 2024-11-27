@@ -12,11 +12,13 @@ public class PaperInteract : MonoBehaviour
 	Vector3 mouseStartPoint;
 	FocusMode focus;
 	GameObject currentTray;
+	SnapPoints snap;
 
 
 	void Start()
 	{
 		focus = GameManager.instance.focus;
+		snap = GameManager.instance.snapping;
 		if(focus == null)
 		{
 			Debug.Log("No focus mode found");
@@ -57,15 +59,22 @@ public class PaperInteract : MonoBehaviour
 		if(dragging || Input.mousePosition != mouseStartPoint)
 		{
 			dragging = true;
-			Transform snapCheck = GameManager.instance.snapping.Check(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceToScreen - dragHeight)));
+			Transform snapCheck = snap.Check(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceToScreen - dragHeight)));
 			if(snapCheck == null)
 			{
+				currentTray?.GetComponent<OutTray>()?.CloseTray();
+				currentTray = null;
 				transform.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
 				FollowMouse();
 			}
 			else
 			{
-				currentTray = GameManager.instance.snapping.currentSnap;
+				if(currentTray != snap.currentSnap)
+				{
+					currentTray = snap.currentSnap;
+					currentTray?.GetComponent<OutTray>()?.OpenTray();
+				}
+				
 				transform.position = new Vector3(snapCheck.position.x, snapCheck.position.y, transform.position.z);
 				transform.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, snapCheck.rotation.eulerAngles.z);
 			}
@@ -83,6 +92,8 @@ public class PaperInteract : MonoBehaviour
 		if(currentTray != null && currentTray.GetComponent<Tray>() != null)
 		{
 			currentTray.GetComponent<Tray>().AddToTray(GetComponent<Paper>());
+			currentTray?.GetComponent<OutTray>()?.CloseTray();
+			currentTray = null;
 		}
 	}
 

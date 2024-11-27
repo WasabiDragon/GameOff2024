@@ -38,8 +38,6 @@ public class tinyWriting : MonoBehaviour
 		RectTransform rtf = tinyWritingBox.GetComponent<RectTransform>();
 		rtf.sizeDelta = new Vector2(lastCharacterPos.x - firstCharacterPos.x, rtf.sizeDelta.y);
 
-		Debug.Log("First Char: "+firstCharacterPos+". Last Char: "+lastCharacterPos);
-
 		tinyWritingBox.transform.localPosition = new Vector3((lastCharacterPos.x + firstCharacterPos.x)/2, firstCharacterPos.y, 0f);
 		
 		tinyText.text = paper.GetInfo().hiddenMessage;

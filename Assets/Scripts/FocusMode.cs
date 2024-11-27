@@ -45,7 +45,7 @@ public class FocusMode : MonoBehaviour
 	public Paper FocusedPaper
 	{
 		get{
-			return storedPaper.GetComponent<Paper>();
+			return storedPaper?.GetComponent<Paper>();
 		}
 	}
 
