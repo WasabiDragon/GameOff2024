@@ -28,7 +28,6 @@ public class paperSorter : MonoBehaviour
 	public void SetStartingHeight(float pos)
 	{
 		startingHeight = pos;
-		Debug.Log(startingHeight);
 	}
 
 	public void SortList(GameObject topSheet)

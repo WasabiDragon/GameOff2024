@@ -4,13 +4,11 @@ public class CaesarSettings : ToolSettings
 {
 	public GameObject innerWheel;
 	float segmentSize = 360f/26f;
-	[ReadOnly] public float checker;
 
 	[ReadOnly]public int Offset
 	{
 		get{
 			float rotation = innerWheel.transform.localRotation.eulerAngles.z;
-			checker = Mathf.RoundToInt(rotation/segmentSize);
 			return Mathf.RoundToInt(rotation/segmentSize);
 		}
 	}

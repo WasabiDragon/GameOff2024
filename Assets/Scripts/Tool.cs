@@ -15,10 +15,12 @@ public class Tool : ScriptableObject
 	public enum toolType
 	{
 		magnifying,
-		ceasar
+		ceasar,
+		transposer
 	}
 	public toolType type;
 	public string toolName;
 	public string description;
 	public int toolSetting;
+	public string transposeSetting;
 }

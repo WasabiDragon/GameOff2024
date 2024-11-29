@@ -6,6 +6,7 @@ public class FocusMode : MonoBehaviour
 {
 	public GameObject paperFocusPoint;
 	public GameObject toolFocusPoint;
+	public GameObject transposerFocusPoint;
 	public GameObject focusBackground;
 	private Vector3 paperOriginalPos;
 	private Vector3 toolOriginalPos;
@@ -66,7 +67,8 @@ public class FocusMode : MonoBehaviour
 			toolOriginalPos = objectToFocus.transform.position;
 			storedTool = objectToFocus;
 			StopAllCoroutines();
-			StartCoroutine(MoveToPos(objectToFocus, toolFocusPoint.transform.position));
+			GameObject focalPoint = storedTool.GetComponent<ToolSettings>().tool.type == Tool.toolType.transposer ? transposerFocusPoint : toolFocusPoint;
+			StartCoroutine(MoveToPos(objectToFocus, focalPoint.transform.position));
 			isToolEnabled = true;
 		}
 		else
@@ -86,6 +88,7 @@ public class FocusMode : MonoBehaviour
 	public void DisableToolFocus()
 	{
 		StartCoroutine(MoveToPos(storedTool, toolOriginalPos));
+		storedTool?.GetComponent<transposerSettings>()?.FocussedRotation(false);
 		isToolEnabled = false;
 		storedTool = null;
 	}
