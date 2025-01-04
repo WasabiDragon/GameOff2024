@@ -5,6 +5,11 @@ public class CaesarSettings : ToolSettings
 	public GameObject innerWheel;
 	float segmentSize = 360f/26f;
 
+	void Start()
+	{
+		InitTool();
+	}
+	
 	[ReadOnly]public int Offset
 	{
 		get{

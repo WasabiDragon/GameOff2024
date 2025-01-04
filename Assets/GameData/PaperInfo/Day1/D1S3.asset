@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f226e2edb57b3481484d5c654b996f4f, type: 3}
+  m_Name: D1S3
+  m_EditorClassIdentifier: 
+  paperLogo: {fileID: 6630627541914547261, guid: a1a45bebd77754ebd84e3b17952f16f3, type: 3}
+  printed: 0
+  displayText: Ebili. Qfep f pjv bquq.lDla rizh bazvmbeofk.d
+  originalText: 'Congratulations. You have passed your orientation.
+
+
+    Please
+    attach your translated message to the original and submit it to your supervisor
+    to begin your official paperwork.'
+  important: 1
+  originalPaper: 1
+  encryptionSteps:
+  - type: 0
+    offset: 6
+    keyWord: 
+  - type: 1
+    offset: 0
+    keyWord: CROWN
+  hiddenMessage: 
+  boundTo: {fileID: 0}
+  hiddenMessagePos: 0
+  attachedPapers: []

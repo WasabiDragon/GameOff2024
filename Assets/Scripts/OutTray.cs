@@ -7,8 +7,35 @@ public class OutTray : Tray
 	[SerializeField] float openRotation;
 	float closedRotation = 0f;
 	[SerializeField] GameObject front;
+	[SerializeField] GameObject back;
 	[SerializeField] float transitionSpeed;
 	bool currentlyOpen;
+
+	private bool RayCheck()
+	{
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		foreach(RaycastHit hit in Physics.RaycastAll(ray))
+		{
+			if(hit.transform.gameObject == back)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	void FixedUpdate()
+	{
+		bool check = RayCheck();
+		if(check && !currentlyOpen)
+		{
+			OpenTray();
+		}
+		else if(!check && currentlyOpen)
+		{
+			CloseTray();
+		}
+	}
 
 	public void OpenTray()
 	{

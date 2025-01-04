@@ -79,6 +79,10 @@ public class FocusMode : MonoBehaviour
 
 	public void DisablePaperFocus()
 	{
+		if(storedPaper == null)
+		{
+			return;
+		}
 		StartCoroutine(MoveToPos(storedPaper, paperOriginalPos));
 		focusBackground.SetActive(false);
 		isEnabled = false;
@@ -87,6 +91,10 @@ public class FocusMode : MonoBehaviour
 
 	public void DisableToolFocus()
 	{
+		if(storedTool == null)
+		{
+			return;
+		}
 		StartCoroutine(MoveToPos(storedTool, toolOriginalPos));
 		storedTool?.GetComponent<transposerSettings>()?.FocussedRotation(false);
 		isToolEnabled = false;

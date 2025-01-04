@@ -13,8 +13,53 @@ MonoBehaviour:
   m_Name: D1S2
   m_EditorClassIdentifier: 
   paperLogo: {fileID: 6630627541914547261, guid: a1a45bebd77754ebd84e3b17952f16f3, type: 3}
-  paperText: Wow, two whole papers?!?!?!
-  important: 1
-  type: 0
-  hiddenMessage: huhhhh
-  hiddenMessagePos: 2
+  printed: 0
+  displayText: '<u>MANDATORY TRAINING</u>
+
+
+    - All official notices and incoming
+    material will arrive on paper such as this one.
+
+
+    - You must decipher the
+    delivered messages, using the tools provided.
+
+
+    - Once you have correctly
+    deciphered the message, staple the translated copy to the original and file it
+    in the folder provided.
+
+
+    - Your work will be double-checked by management.
+    Failure is not an option.
+
+
+    Make the crown proud.'
+  originalText: '<u>MANDATORY TRAINING</u>
+
+
+    - All official notices and incoming
+    material will arrive on paper such as this one.
+
+
+    - You must decipher the
+    delivered messages, using the tools provided.
+
+
+    - Once you have correctly
+    deciphered the message, staple the translated copy to the original and file it
+    in the folder provided.
+
+
+    - Your work will be double-checked by management.
+    Failure is not an option.
+
+
+    Make the crown proud.'
+  important: 0
+  originalPaper: 1
+  encryptionSteps: []
+  hiddenMessage: 
+  boundTo: {fileID: 0}
+  hiddenMessagePos: 0
+  attachedPapers: []

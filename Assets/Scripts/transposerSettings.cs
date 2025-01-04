@@ -9,10 +9,11 @@ public class transposerSettings : ToolSettings
 	Vector3 startingMousePos;
 	[SerializeField] Vector3 focussedRotation;
 	Vector3 defaultRotation;
-	
+	bool clicked = false;
+
 	void Start()
 	{
-		Init();
+		InitTool();
 		defaultRotation = transform.localEulerAngles;
 	}
 
@@ -24,17 +25,22 @@ public class transposerSettings : ToolSettings
 		}
 	}
 
-	void OnMouseDown()
+	public void OnMouseDown()
 	{
-		startingMousePos = Input.mousePosition;
+		if(!GameManager.instance.rays.UI())
+		{
+			clicked = true;
+			startingMousePos = Input.mousePosition;
+		}
 	}
 
-	void OnMouseUp()
+	public void OnMouseUp()
 	{
-		if(Input.mousePosition == startingMousePos)
+		if(clicked && Input.mousePosition == startingMousePos)
 		{
 			Trigger();
 		}	
+		clicked = false;
 	}
 
 	public void Trigger()

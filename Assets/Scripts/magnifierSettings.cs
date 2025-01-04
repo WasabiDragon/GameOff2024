@@ -6,13 +6,17 @@ public class magnifierSettings : ToolSettings
 	Bounds tinyBounds;
 	[SerializeField] GameObject magnifier;
 
+	void Start()
+	{
+		InitTool();
+	}
 
 	public void Trigger()
 	{
 		Decode();
 	}
 
-	void OnMouseUp()
+	public void OnMouseUp()
 	{
 		if(focus.ToolFocusEnabled())
 		{
