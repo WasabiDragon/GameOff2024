@@ -146,11 +146,10 @@ public class Decoder : MonoBehaviour
 					}
 				}
 			}
-			Debug.Log("Does "+group+" = "+patternedMessage.Last());
 			if(group == patternedMessage.Last())
 			{
-				Debug.Log("YES!");
-				_groupOutput.TrimEnd(char.Parse(" "));
+				_groupOutput = _groupOutput.TrimEnd();
+				Debug.Log("Group of "+group.Length+" letters becomes groupOutput of "+_groupOutput.Length+" letters.");
 			}
 			output += _groupOutput;
 		}

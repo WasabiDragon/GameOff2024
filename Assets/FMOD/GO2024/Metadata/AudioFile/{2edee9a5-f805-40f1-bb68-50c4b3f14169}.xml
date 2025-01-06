@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2edee9a5-f805-40f1-bb68-50c4b3f14169}">
+		<property name="assetPath">
+			<value>Originals/Impact Wood Hit Ground Thud 01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.38945833333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{feba0a18-c612-4bd6-ae1d-854799fde825}</destination>
+		</relationship>
+	</object>
+</objects>

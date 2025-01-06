@@ -9,8 +9,8 @@ public class dayTimer : MonoBehaviour
 	float _dayLength;
 	float _timeRemaining;
 	bool _timerRunning = false;
-	float _updateRate = 1;
-	float _updateCheck = 0;
+	float _updateRate = 1f;
+	float _updateCheck = 1f;
 
 	void Start()
 	{
@@ -26,6 +26,7 @@ public class dayTimer : MonoBehaviour
 	void StartTimer()
 	{
 		_timeRemaining = _dayLength;
+		UpdateClock();
 		_timerRunning = true;
 	}
 

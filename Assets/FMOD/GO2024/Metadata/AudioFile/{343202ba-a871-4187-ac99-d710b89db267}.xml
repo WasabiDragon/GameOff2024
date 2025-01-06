@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{343202ba-a871-4187-ac99-d710b89db267}">
+		<property name="assetPath">
+			<value>Originals/01 BIG BEN, Chiming And Striking 12.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>88.186666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{feba0a18-c612-4bd6-ae1d-854799fde825}</destination>
+		</relationship>
+	</object>
+</objects>

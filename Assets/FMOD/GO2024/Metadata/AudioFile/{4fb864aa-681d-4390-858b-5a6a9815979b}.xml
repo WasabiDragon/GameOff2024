@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4fb864aa-681d-4390-858b-5a6a9815979b}">
+		<property name="assetPath">
+			<value>BigBenTick/Tick17.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.88827664399092976</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{feba0a18-c612-4bd6-ae1d-854799fde825}</destination>
+		</relationship>
+	</object>
+</objects>

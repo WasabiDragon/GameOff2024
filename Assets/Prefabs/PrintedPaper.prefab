@@ -568,9 +568,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d1372961c02924e01a1bb731a8a6d69d, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1372961c02924e01a1bb731a8a6d69d, type: 3}
       propertyPath: m_Name
       value: PrintedPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1372961c02924e01a1bb731a8a6d69d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -630,6 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70840a9beec254003a830f5ef83d3ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicked: 0
   dragHeight: 0.5
 --- !u!64 &5025651107260202453
 MeshCollider:

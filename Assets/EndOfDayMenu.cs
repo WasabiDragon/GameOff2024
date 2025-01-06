@@ -97,12 +97,16 @@ public class EndOfDayMenu : MonoBehaviour
 		for(int i = 0; i < text.Length; i++)
 		{
 			_currentText = text.Substring(0,i+1);
-			if(text[i] == char.Parse(@"\"))
+			if(text[i] == char.Parse("\n"))
 			{
+				i+=1;
+				Debug.Log("Typewriter should dinggg");
+				GameManager.instance.audioManager.TypewriterDing();
 				yield return new WaitForSeconds(_lineDelay);
 				continue;
 			}
 			textLocation.text = _currentText;
+			GameManager.instance.audioManager.TypewriterTick();
 			yield return new WaitForSeconds(_delay);
 		}
 	}
