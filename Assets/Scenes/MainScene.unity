@@ -2022,24 +2022,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tableTap:
     Guid:
-      Data1: 1254940511
-      Data2: 1320727272
-      Data3: 1452786618
-      Data4: -972997320
+      Data1: 1562591270
+      Data2: 1115482654
+      Data3: -829198159
+      Data4: -2127413971
     Path: event:/TableTap
   _backgroundTrack:
     Guid:
-      Data1: -334590851
-      Data2: 1307824978
-      Data3: 1874890131
-      Data4: -1882052040
+      Data1: -1655697931
+      Data2: 1223422358
+      Data3: -313839177
+      Data4: -829282817
     Path: event:/BackgroundMusic
   _tickSecond:
     Guid:
-      Data1: -859130539
-      Data2: 1227063057
-      Data3: 1274975406
-      Data4: 528896261
+      Data1: 148633275
+      Data2: 1309791399
+      Data3: -43594054
+      Data4: 75808094
     Path: event:/ClockTick
   _tickMinute:
     Guid:
@@ -2050,17 +2050,17 @@ MonoBehaviour:
     Path: 
   _typewriterTick:
     Guid:
-      Data1: -812856668
-      Data2: 1307831525
-      Data3: 787527318
-      Data4: 2023953856
+      Data1: -258516756
+      Data2: 1086481835
+      Data3: -915499346
+      Data4: 1930126376
     Path: event:/TypeWriterKey
   _typewriterDing:
     Guid:
-      Data1: -812313403
-      Data2: 1305650358
-      Data3: 89466027
-      Data4: 1688844040
+      Data1: -1573512451
+      Data2: 1223138018
+      Data3: -1826996860
+      Data4: -776746505
     Path: event:/TypeWriterKeyAndBell
   _endOfDay:
     Guid:
@@ -5339,7 +5339,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ddd1c25101d8748ae91e9c81df05d502, type: 3}
       insertIndex: -1
       addedObject: {fileID: 543586522}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ddd1c25101d8748ae91e9c81df05d502, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1484128910}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ddd1c25101d8748ae91e9c81df05d502, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1484128909}
   m_SourcePrefab: {fileID: 100100000, guid: ddd1c25101d8748ae91e9c81df05d502, type: 3}
 --- !u!4 &1484128905 stripped
 Transform:
@@ -5351,6 +5357,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ddd1c25101d8748ae91e9c81df05d502, type: 3}
   m_PrefabInstance: {fileID: 1484128904}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1484128909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484128906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa2e611975684c638014e454b6794b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicked: 0
+--- !u!64 &1484128910
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484128906}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: ddd1c25101d8748ae91e9c81df05d502, type: 3}
 --- !u!1 &1652447301
 GameObject:
   m_ObjectHideFlags: 0

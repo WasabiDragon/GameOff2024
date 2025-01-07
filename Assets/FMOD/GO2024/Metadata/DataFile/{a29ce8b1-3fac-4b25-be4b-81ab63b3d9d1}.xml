@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{a29ce8b1-3fac-4b25-be4b-81ab63b3d9d1}">
+		<property name="assetPath">
+			<value>Originals/Paper Tick 01.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{feba0a18-c612-4bd6-ae1d-854799fde825}</destination>
+		</relationship>
+	</object>
+</objects>

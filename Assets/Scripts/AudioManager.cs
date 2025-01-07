@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
 	
 	[SerializeField] EventReference _tableTap;
+	EventInstance _tableTapInst;
 	[SerializeField] EventReference _backgroundTrack;
 	EventInstance _backgroundTrackInst;
 	[SerializeField] EventReference _tickSecond;
@@ -15,10 +16,30 @@ public class AudioManager : MonoBehaviour
 	[SerializeField] EventReference _typewriterDing;
 	[SerializeField] EventReference _endOfDay;
 
+	private void OneShotPitch(EventReference soundRef, float pitch = 0f)
+	{
+		try
+        {
+            var instance = RuntimeManager.CreateInstance(soundRef);
+			if(pitch == 0f)
+			{
+				pitch = 1f;
+			}
+			instance.setPitch(pitch);
+			instance.start();
+			instance.release();
+        }
+        catch (EventNotFoundException)
+        {
+            Debug.LogWarning("[FMOD] Event not found: " + soundRef);
+        }
+	}
+
 	void Start()
 	{
 		SetSubscriptions();
 		_backgroundTrackInst = RuntimeManager.CreateInstance(_backgroundTrack);
+		_tableTapInst = RuntimeManager.CreateInstance(_tableTap);
 	}
 
 	private void SetSubscriptions()
@@ -28,9 +49,10 @@ public class AudioManager : MonoBehaviour
 		EventManager.instance.DayStart += StartMusic;
 	}
 
-	public void PaperCrunch()
+	public void TableTap()
 	{
-		RuntimeManager.PlayOneShot(_tableTap);
+		float pitch = UnityEngine.Random.Range(0.85f,1.35f);
+		OneShotPitch(_tableTap, pitch);
 	}
 
 	public void StartMusic()
@@ -49,14 +71,14 @@ public class AudioManager : MonoBehaviour
 	/// <param name="type">default is small tick. Make true for bigger tick.</param>
 	public void ClockTick(bool alternate = false)
 	{
-		// EventReference _toPlay =  alternate ? _tickMinute : _tickSecond;
-		// RuntimeManager.PlayOneShot(_toPlay);
-		RuntimeManager.PlayOneShot(_tickSecond);
+		float pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+		OneShotPitch(_tickSecond, pitch);
 	} 
 
 	public void TypewriterTick()
 	{
-		RuntimeManager.PlayOneShot(_typewriterTick);
+		float pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+		OneShotPitch(_typewriterTick);
 	}
 
 	public void TypewriterDing()

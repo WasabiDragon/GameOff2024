@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{7b0d7bf0-6669-4c6e-909d-d08360c6e2f2}">
+		<property name="assetPath">
+			<value>Originals/04 BIG BEN, Chiming Three-Quarter Ho.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{feba0a18-c612-4bd6-ae1d-854799fde825}</destination>
+		</relationship>
+	</object>
+</objects>

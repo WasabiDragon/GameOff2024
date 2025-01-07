@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class clickDesk : MonoBehaviour
+public class clickDesk : Interactable
 {
-    void OnMouseDown()
+    public override void InteractStart()
 	{
-		GameManager.instance.audioManager.PaperCrunch();
+		GameManager.instance.audioManager.TableTap();
 	}
 }
