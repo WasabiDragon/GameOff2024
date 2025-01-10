@@ -44,6 +44,7 @@ public class PaperSpawner : MonoBehaviour
 	private PaperInfo EncryptPaper(PaperInfo paper)
 	{
 		paper.displayText = GameManager.instance.decoder.EncryptMessage(paper.encryptionSteps, paper.originalText);
+		paper.smallTextDisplay = GameManager.instance.decoder.EncryptMessage(paper.encryptionSteps, paper.smallTextOriginal);
 		return paper;
 	}
 

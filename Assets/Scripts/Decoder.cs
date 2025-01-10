@@ -70,7 +70,7 @@ public class Decoder : MonoBehaviour
 
 	private string Magnify()
 	{
-		return focus.FocusedPaper.GetInfo().hiddenMessage;
+		return focus.FocusedPaper.GetInfo().smallTextDisplay;
 	}
 	
 	#region Decryption

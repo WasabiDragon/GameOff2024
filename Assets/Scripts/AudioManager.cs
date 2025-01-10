@@ -71,13 +71,13 @@ public class AudioManager : MonoBehaviour
 	/// <param name="type">default is small tick. Make true for bigger tick.</param>
 	public void ClockTick(bool alternate = false)
 	{
-		float pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+		float pitch = UnityEngine.Random.Range(0.85f,1.35f);
 		OneShotPitch(_tickSecond, pitch);
 	} 
 
 	public void TypewriterTick()
 	{
-		float pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+		float pitch = UnityEngine.Random.Range(0.85f,1.35f);
 		OneShotPitch(_typewriterTick);
 	}
 

@@ -19,7 +19,7 @@ MonoBehaviour:
     Data3: -1826996860
     Data4: -776746505
   Banks:
-  - {fileID: -4984551887962854542}
+  - {fileID: 5349162990304346795}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     Data3: -829198159
     Data4: -2127413971
   Banks:
-  - {fileID: -4984551887962854542}
+  - {fileID: 5349162990304346795}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-4984551887962854542
+--- !u!114 &-5480244297194145670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,15 +64,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/GO2024/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638718693216683456
+  Path: Assets/FMODBanks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638721267499151221
   FileSizes:
-  - Name: Desktop
-    Value: 9956352
+  - Name: 
+    Value: 960
   Exists: 1
 --- !u!114 &-533212178067071094
 MonoBehaviour:
@@ -93,8 +93,8 @@ MonoBehaviour:
     Data3: -313839177
     Data4: -829282817
   Banks:
-  - {fileID: -4984551887962854542}
-  IsStream: 1
+  - {fileID: 5349162990304346795}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5671277829680384845}
-  - {fileID: -4984551887962854542}
+  - {fileID: -5480244297194145670}
+  - {fileID: 5349162990304346795}
   EditorEvents:
   - {fileID: -6966693656701582302}
   - {fileID: 4327248122598231229}
@@ -124,10 +124,10 @@ MonoBehaviour:
   - {fileID: -8750871270540259808}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4984551887962854542}
+  - {fileID: 5349162990304346795}
   StringsBanks:
-  - {fileID: 5671277829680384845}
-  cacheTime: 638718693216710634
+  - {fileID: -5480244297194145670}
+  cacheTime: 638721267499151221
   cacheVersion: 131621
 --- !u!114 &4327248122598231229
 MonoBehaviour:
@@ -148,7 +148,7 @@ MonoBehaviour:
     Data3: -43594054
     Data4: 75808094
   Banks:
-  - {fileID: -4984551887962854542}
+  - {fileID: 5349162990304346795}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -156,7 +156,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5671277829680384845
+--- !u!114 &5349162990304346795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,15 +166,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/GO2024/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638718693216710634
-  FileSizes:
-  - Name: Desktop
-    Value: 960
+  Path: Assets/FMODBanks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638721267499112367
+  FileSizes: []
   Exists: 1
 --- !u!114 &7608601224755889553
 MonoBehaviour:
@@ -195,7 +193,7 @@ MonoBehaviour:
     Data3: -915499346
     Data4: 1930126376
   Banks:
-  - {fileID: -4984551887962854542}
+  - {fileID: 5349162990304346795}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

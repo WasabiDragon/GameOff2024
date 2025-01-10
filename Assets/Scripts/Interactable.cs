@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
-	public bool clicked = false;
+	[ReadOnly] public bool clicked = false;
 
 	public virtual void InteractStart()
 	{

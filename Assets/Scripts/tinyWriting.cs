@@ -17,7 +17,7 @@ public class tinyWriting : MonoBehaviour
 	void Init()
 	{
 		focus = GameManager.instance.focus;
-		if(paper != null && paper.GetInfo().hiddenMessage != null && paper.GetInfo().hiddenMessage.Length > 0)
+		if(paper != null && paper.GetInfo().smallTextDisplay != null && paper.GetInfo().smallTextDisplay.Length > 0)
 		{
 			tinyWritingBox.SetActive(true);
 			WriteMessage(paper.GetInfo().hiddenMessagePos);
@@ -40,7 +40,7 @@ public class tinyWriting : MonoBehaviour
 
 		tinyWritingBox.transform.localPosition = new Vector3((lastCharacterPos.x + firstCharacterPos.x)/2, firstCharacterPos.y, 0f);
 		
-		tinyText.text = paper.GetInfo().hiddenMessage;
+		tinyText.text = paper.GetInfo().smallTextDisplay;
 	}
 
 	void OnMouseDown()

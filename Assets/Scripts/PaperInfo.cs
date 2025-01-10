@@ -21,20 +21,22 @@ public class PaperInfo : ScriptableObject
 		important = info.important;
 		originalPaper = info.originalPaper;
 		encryptionSteps = info.encryptionSteps;
-		hiddenMessage = info.hiddenMessage;
+		smallTextOriginal = info.smallTextOriginal;
 		hiddenMessagePos = info.hiddenMessagePos;
 		boundTo = null;
 		attachedPapers = new List<GameObject>();
 		name = info.name+"_inst";
 	}
 	public Sprite paperLogo;
+	public bool important;
+	public bool originalPaper = false;
 	[ReadOnly] public bool printed = false;
 	[ReadOnly] public string displayText;
 	[TextArea(5,20)][Multiline]public string originalText;
-	public bool important;
-	public bool originalPaper = false;
 	public List<EncryptionStep> encryptionSteps;
-	[Multiline] public string hiddenMessage;
+	[ReadOnly] public string smallTextDisplay;
+	[Multiline] public string smallTextOriginal;
+	public List<EncryptionStep> smallTextEncrypt;
 	public GameObject boundTo;
 
 	[Tooltip("X = line, Y = word")]
