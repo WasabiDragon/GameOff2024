@@ -13,9 +13,25 @@ MonoBehaviour:
   m_Name: D1S1
   m_EditorClassIdentifier: 
   paperLogo: {fileID: 6630627541914547261, guid: a1a45bebd77754ebd84e3b17952f16f3, type: 3}
-  paperText: this message is another test.<br><br>that is all.\n\nplease resume business
-    as usual.
+  printed: 0
+  displayText: "Dear\n\t\tDESK OPERATOR #21045\n\nWe are delighted you have decided
+    to enlist in the Civil Regent's Unified Decryption Enterprise. Unfortunately,
+    resources are spread thinly, as such, your orientation officer has requested
+    you to be sent the brief version of our mandatory training. You should find this
+    on your desk.\n\nRegards,\n\n\tTabitha Hampton, \n\t\t\tMessenger of the Crown\n\nP.S.
+    Your first assignment is of high value to the CROWN. Hopefully you can separate
+    your A's from your G's."
+  originalText: "Dear\n\tDESK OPERATOR 21045\n\nWe are delighted you have decided
+    to enlist in the Civil Regent's Unified Decryption Enterprise. Unfortunately,
+    resources are spread thinly, as such, your orientation officer has requested
+    you to be sent the brief version of our mandatory training. You should find this
+    on your desk.\n\nRegards,\n\n\tTabitha Hampton, \n\n\tC.R.U.D.E Management Representative\n\nP.S.
+    Your first assignment is of high value to the CROWN. Hopefully you can separate
+    your A's from your G's."
   important: 0
-  type: 0
-  hiddenMessage: Hi, I am a hidden message
-  hiddenMessagePos: 4
+  originalPaper: 1
+  encryptionSteps: []
+  hiddenMessage: 
+  boundTo: {fileID: 0}
+  hiddenMessagePos: 0
+  attachedPapers: []

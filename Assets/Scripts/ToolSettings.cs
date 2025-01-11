@@ -5,12 +5,7 @@ public class ToolSettings : MonoBehaviour
     public Tool tool;
 	[ReadOnly] public FocusMode focus;
 
-	void Start()
-	{
-		Init();
-	}
-
-	public void Init()
+	public void InitTool()
 	{
 		focus = GameManager.instance.focus;
 	}

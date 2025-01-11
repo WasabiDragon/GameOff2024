@@ -5,7 +5,7 @@ public class Tray : MonoBehaviour
 {
 	public List<Paper> objectsInTray;
 
-	public void AddToTray(Paper paper)
+	public virtual void AddToTray(Paper paper)
 	{
 		if(paper != null)
 		{
@@ -13,7 +13,7 @@ public class Tray : MonoBehaviour
 		}
 	}
 
-	public void RemoveFromTray(Paper paper)
+	public virtual void RemoveFromTray(Paper paper)
 	{
 		if(paper != null && objectsInTray.Contains(paper))
 		{

@@ -18,5 +18,10 @@ public class GameManager : MonoBehaviour
 	public SnapPoints snapping;
 	public CaesarSettings caesarSettings;
 	public magnifierSettings magnifyingSettings;
-	public audioManager audioManager;
+	public AudioManager audioManager;
+	public GraphicRaycastersList raycasters;
+	public ScoreCalc score;
+	public dailyWorkTracker dailyWork;
+	public RaycastCheck rays;
+	public InteractionManager interactions;
 }

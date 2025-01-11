@@ -4,5 +4,6 @@ using System;
 public enum CodeType
 {
 	cipher,
-	fart
+	transposition,
+	magnification
 }

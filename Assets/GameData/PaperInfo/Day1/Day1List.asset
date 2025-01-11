@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Day1List
   m_EditorClassIdentifier: 
   dailyPapers:
-  - {fileID: 11400000, guid: 63fe04984432a4b769ffe0d8dc331ef4, type: 2}
   - {fileID: 11400000, guid: b1750669771d74352acf864ada418c9e, type: 2}
+  - {fileID: 11400000, guid: a311d79665d2743d8b94b3d8e9a8f2f9, type: 2}
+  - {fileID: 11400000, guid: 63fe04984432a4b769ffe0d8dc331ef4, type: 2}

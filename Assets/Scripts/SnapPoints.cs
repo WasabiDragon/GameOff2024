@@ -9,6 +9,7 @@ public class SnapPoints : MonoBehaviour
 
     public Transform Check(Vector3 currentPoint)
 	{
+		currentSnapPoint = null;
 		float smallestDistance = snapDistance;
 		foreach(Transform node in nodes)
 		{
@@ -17,11 +18,10 @@ public class SnapPoints : MonoBehaviour
 			{
 				smallestDistance = distance;
 				currentSnapPoint = node.gameObject;
-				return node;
+				// return node;
 			}
 		}
-		currentSnapPoint = null;
-		return null;
+		return currentSnapPoint?.transform;
 	}
 
 	public GameObject currentSnap

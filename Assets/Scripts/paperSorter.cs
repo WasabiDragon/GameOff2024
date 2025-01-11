@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using UnityEngine;
 
 public class paperSorter : MonoBehaviour
@@ -16,19 +17,44 @@ public class paperSorter : MonoBehaviour
 
 	public void RemovePaper(GameObject paper)
 	{
-		foreach(GameObject sheet in papers)
+		if(papers == null || papers.Count <= 0 || !papers.Contains(paper))
 		{
-			if(sheet == paper)
-			{
-				papers.Remove(sheet);
-			}
+			return;
 		}
+		papers.Remove(paper);
 	}
-
+	
 	public void SetStartingHeight(float pos)
 	{
 		startingHeight = pos;
-		Debug.Log(startingHeight);
+	}
+	
+	public void UpdateTopSheet(GameObject topSheet)
+	{
+		float sortHeight = 0.01f;
+		papers.Remove(topSheet);
+		papers.OrderBy(x => -x.transform.position.z);
+		papers.Add(topSheet);
+		foreach(GameObject obj in papers)
+		{
+			if(obj == GameManager.instance.focus.FocusedPaper?.gameObject)
+			{
+				continue;
+			}
+			Vector3 newPos = obj.transform.localPosition;
+			if(obj.GetComponent<Paper>().GetInfo().attachedPapers != null)
+			{
+				foreach(GameObject paper in obj.GetComponent<Paper>().GetInfo().attachedPapers)
+				{
+					sortHeight += 0.001f;
+					newPos.z = startingHeight - sortHeight;
+					paper.transform.localPosition = newPos;
+				}
+			}
+			sortHeight += 0.001f;
+			newPos.z = startingHeight - sortHeight;
+			obj.transform.localPosition = newPos;
+		}
 	}
 
 	public void SortList(GameObject topSheet)
@@ -53,7 +79,10 @@ public class paperSorter : MonoBehaviour
 				{
 					continue;
 				}
-				newPos.z += 0.01f;
+				else
+				{
+					newPos.z += 0.01f;
+				}
 				papers[i].transform.localPosition = newPos;
 			}
 		}
