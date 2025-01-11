@@ -4,9 +4,9 @@ AssetOrigin:
   serializedVersion: 1
   productId: 161631
   packageName: FMOD for Unity
-  packageVersion: 2.02.24
+  packageVersion: 2.02.26
   assetPath: Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounityplugin.bc
-  uploadId: 707645
+  uploadId: 717736
 PluginImporter:
   externalObjects: {}
   serializedVersion: 3
@@ -26,7 +26,7 @@ PluginImporter:
       settings:
         DefaultValueInitialized: true
     WebGL:
-      enabled: 0
+      enabled: 1
       settings: {}
   userData: 
   assetBundleName: 

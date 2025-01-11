@@ -2,6 +2,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using System;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -35,6 +36,14 @@ public class AudioManager : MonoBehaviour
         }
 	}
 
+	public bool ready
+	{
+		get
+		{
+			return RuntimeManager.HasBankLoaded("Master");
+		}
+		
+	}
 	void Start()
 	{
 		SetSubscriptions();
@@ -57,6 +66,12 @@ public class AudioManager : MonoBehaviour
 
 	public void StartMusic()
 	{
+		StartCoroutine(StartMusicDelayed());
+	}
+
+	private IEnumerator StartMusicDelayed()
+	{
+		yield return new WaitUntil(() => RuntimeManager.HasBankLoaded("Master") == true);
 		_backgroundTrackInst.start();
 	}
 

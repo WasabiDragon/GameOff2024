@@ -24,6 +24,7 @@ public class EndOfDayMenu : MonoBehaviour
 
 	private IEnumerator Initialize()
 	{
+		yield return new WaitUntil(() => GameManager.instance.audioManager.ready);
 		yield return StartCoroutine(TypeText(GenerateText(true), _textBox));
 		
 		_buttonText.text = "";
